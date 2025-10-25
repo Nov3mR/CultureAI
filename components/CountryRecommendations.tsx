@@ -157,7 +157,7 @@ export default function CountryRecommendations({ userId }: { userId: string }) {
               </div>
 
               {rec.similar_to && (
-                <div className="mt-4 p-3 bg-blue-50 rounded-lg text-sm">
+                <div className="mt-4 p-3 bg-blue-50 rounded-lg text-sm text-gray-600">
                   <span className="font-medium text-gray-600">🔗 Similar to:</span> {rec.similar_to}
                 </div>
               )}

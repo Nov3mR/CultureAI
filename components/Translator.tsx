@@ -141,8 +141,8 @@ export default function Translator() {
                     </div>
 
                     <div className="text-sm">
-                        <span className="font-medium">Formality:</span>{' '}
-                        <span className="px-2 py-1 bg-gray-200 rounded-full">
+                        <span className="font-medium text-gray-600">Formality:</span>{' '}
+                        <span className="px-2 py-1 bg-gray-200 rounded-full text-gray-600">
                             {translation.formality}
                         </span>
                     </div>

@@ -93,7 +93,7 @@ export default function ActivityRecommendations({ userId }: { userId: string }) 
                     className="w-full bg-blue-500 text-white py-3 rounded-lg font-medium hover:bg-blue-600 disabled:bg-gray-300 disabled:cursor-not-allowed"
                     >
                     {loading 
-                        ? '🌍 Finding your perfect destination...'
+                        ? '🌍 Finding your ideal activity...'
                         : !interests || !country
                         ? <span className="text-gray-50">Enter a country and select your interests</span>
                         : '✨ Get Recommendations'}
@@ -118,7 +118,7 @@ export default function ActivityRecommendations({ userId }: { userId: string }) 
                                 </span>
                             </div>
 
-                            <p className="text-gray-700 mb-4">{activity.description}</p>
+                            <p className="text-blue-700 mb-4">{activity.description}</p>
 
                             <div className="grid grid-cols-2 gap-4 text-sm">
                                 <div>
@@ -133,8 +133,8 @@ export default function ActivityRecommendations({ userId }: { userId: string }) 
                             </div>
 
                             {activity.tips && (
-                                <div className="mt-4 p-3 bg-yellow-50 rounded-lg">
-                                    <span className="font-medium">💡 Tip:</span> {activity.tips}
+                                <div className="mt-4 p-3 bg-yellow-50 rounded-lg text-gray-600">
+                                    <span className="font-medium text-gray-600">💡 Tip:</span> {activity.tips}
                                 </div>
                             )}
                         </div>
