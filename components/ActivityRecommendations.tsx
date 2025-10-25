@@ -112,23 +112,26 @@ export default function ActivityRecommendations({ userId }: { userId: string }) 
                             className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500"
                         >
                             <div className="flex justify-between items-start mb-3">
-                                <h4 className="text-xl font-semibold">{activity.name}</h4>
+                                <h4 className="text-xl font-semibold text-blue-700">{activity.name}</h4>
                                 <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
                                     {activity.category}
                                 </span>
                             </div>
 
-                            <p className="text-blue-700 mb-4">{activity.description}</p>
+                            <p className="text-gray-700 mb-4">{activity.description}</p>
 
                             <div className="grid grid-cols-2 gap-4 text-sm">
                                 <div>
-                                    <span className="font-medium text-gray-600">📍 Location:</span> {activity.location}
+                                    <span className="font-medium text-gray-600">📍 Location:</span>{' '}
+                                    <span className="text-gray-600">{activity.location}</span>
                                 </div>
                                 <div>
-                                    <span className="font-medium text-gray-600">💰 Cost:</span> {activity.estimated_cost}
+                                    <span className="font-medium text-gray-600">💰 Cost:</span> {' '}
+                                    <span className="text-gray-600">{activity.estimated_cost}</span>
                                 </div>
                                 <div>
-                                    <span className="font-medium text-gray-600">🗓️ Best Time:</span> {activity.best_time}
+                                    <span className="font-medium text-gray-600">🗓️ Best Time:</span> {' '}
+                                    <span className="text-gray-600">{activity.best_time}</span>
                                 </div>
                             </div>
 

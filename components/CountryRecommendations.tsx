@@ -148,13 +148,15 @@ export default function CountryRecommendations({ userId }: { userId: string }) {
 
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div>
-                  <span className="font-medium text-gray-600">🎯 Best for:</span> {rec.best_for}
+                  <span className="font-medium text-gray-600">🎯 Best for:</span> {' '}
+                  <span className="text-gray-600">{rec.best_for}</span>
                 </div>
               </div>
 
               {rec.similar_to && (
                 <div className="mt-4 p-3 bg-blue-50 rounded-lg text-sm text-gray-600">
-                  <span className="font-medium text-gray-600">🔗 Similar to:</span> {rec.similar_to}
+                  <span className="font-medium text-gray-600">🔗 Similar to:</span> {' '}
+                  <span className="text-gray-600">{rec.similar_to}</span>
                 </div>
               )}
             </div>
