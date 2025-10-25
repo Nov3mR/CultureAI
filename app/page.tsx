@@ -2,9 +2,12 @@
 
 import React, { useState } from 'react';
 import { Compass, Globe, Languages, Sparkles, MapPin, Plane } from 'lucide-react';
+import ActivityRecommendations from '@/components/ActivityRecommendations';
+import CountryRecommendations from '@/components/CountryRecommendations';
+import Translator from '@/components/Translator';
 
 // Mock components for demonstration
-const ActivityRecommendations = ({ userId }: { userId: string }) => (
+const ActivityRecs = ({ userId }: { userId: string }) => (
   <div className="p-8 text-center text-gray-600">
     <Compass className="w-16 h-16 mx-auto mb-4 text-blue-500" />
     <h3 className="text-xl font-semibold mb-2">Activity Recommendations</h3>
@@ -12,7 +15,7 @@ const ActivityRecommendations = ({ userId }: { userId: string }) => (
   </div>
 );
 
-const CountryRecommendations = ({ userId }: { userId: string }) => (
+const CountryRecs = ({ userId }: { userId: string }) => (
   <div className="p-8 text-center text-gray-600">
     <Globe className="w-16 h-16 mx-auto mb-4 text-purple-500" />
     <h3 className="text-xl font-semibold mb-2">Country Recommendations</h3>
@@ -20,7 +23,7 @@ const CountryRecommendations = ({ userId }: { userId: string }) => (
   </div>
 );
 
-const Translator = () => (
+const Trans = () => (
   <div className="p-8 text-center text-gray-600">
     <Languages className="w-16 h-16 mx-auto mb-4 text-emerald-500" />
     <h3 className="text-xl font-semibold mb-2">Translator</h3>
@@ -45,9 +48,9 @@ export default function Home() {
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob z-0"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000 z-0"></div>
+        <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000 z-0"></div>
       </div>
 
       <div className="container mx-auto px-4 py-12 relative z-10">
