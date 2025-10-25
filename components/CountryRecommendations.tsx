@@ -34,7 +34,6 @@ export default function CountryRecommendations({ userId }: { userId: string }) {
 
   return (
     <div className="max-w-4xl mx-auto p-6">
-      <h2 className="text-3xl font-bold mb-6 text-purple-700">Discover Your Next Destination</h2>
         <div className="p-8 text-center text-gray-600">
             <Globe className="w-16 h-16 mx-auto mb-4 text-purple-500" />
             <h3 className="text-xl font-semibold mb-2 text-gray-600">Country Recommendations</h3>
