@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { translateText, Translation } from '@/lib/travelApi';
+import { Compass, Globe, Languages, Sparkles, MapPin, Plane } from 'lucide-react';
 
 export default function Translator() {
     const [text, setText] = useState('');
@@ -43,11 +44,16 @@ export default function Translator() {
 
     return (
         <div className="max-w-3xl mx-auto p-6">
-            <h2 className="text-3xl font-bold mb-6">Travel Translator</h2>
+              <div className="p-8 text-center text-gray-600">
+                <Languages className="w-16 h-16 mx-auto mb-4 text-emerald-500" />
+                <h3 className="text-xl font-semibold mb-2 text-gray-600">Translator</h3>
+                <p>Break language barriers with AI translation</p>
+              </div>
+            <h2 className="text-3xl font-bold mb-6 text-gray-600">Travel Translator</h2>
 
-            <form onSubmit={handleTranslate} className="space-y-4 mb-8">
+            <form onSubmit={handleTranslate} className="space-y-4 mb-8 text-gray-600">
                 <div>
-                    <label className="block text-sm font-medium mb-2">
+                    <label className="block text-sm font-medium mb-2 text-gray-600">
                         What do you want to say?
                     </label>
                     <textarea
@@ -60,7 +66,7 @@ export default function Translator() {
                 </div>
 
                 <div>
-                    <label className="block text-sm font-medium mb-2">
+                    <label className="block text-sm font-medium mb-2 text-gray-600">
                         Translate to:
                     </label>
                     <select
@@ -75,7 +81,7 @@ export default function Translator() {
                 </div>
 
                 <div>
-                    <label className="block text-sm font-medium mb-2">
+                    <label className="block text-sm font-medium mb-2 text-gray-600">
                         Context (optional):
                     </label>
                     <select

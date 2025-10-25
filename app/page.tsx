@@ -13,31 +13,6 @@ import ActivityRecommendations from "@/components/ActivityRecommendations";
 import CountryRecommendations from "@/components/CountryRecommendations";
 import Translator from "@/components/Translator";
 
-// Mock components for demonstration
-const ActivityRecs = ({ userId }: { userId: string }) => (
-  <div className="p-8 text-center text-gray-600">
-    <Compass className="w-16 h-16 mx-auto mb-4 text-blue-500" />
-    <h3 className="text-xl font-semibold mb-2">Activity Recommendations</h3>
-    <p>Discover exciting activities at your destination</p>
-  </div>
-);
-
-const CountryRecs = ({ userId }: { userId: string }) => (
-  <div className="p-8 text-center text-gray-600">
-    <Globe className="w-16 h-16 mx-auto mb-4 text-purple-500" />
-    <h3 className="text-xl font-semibold mb-2">Country Recommendations</h3>
-    <p>Find your next dream destination</p>
-  </div>
-);
-
-const Trans = () => (
-  <div className="p-8 text-center text-gray-600">
-    <Languages className="w-16 h-16 mx-auto mb-4 text-emerald-500" />
-    <h3 className="text-xl font-semibold mb-2">Translator</h3>
-    <p>Break language barriers with AI translation</p>
-  </div>
-);
-
 export default function Home() {
   const [activeTab, setActiveTab] = useState<
     "activities" | "countries" | "translate"

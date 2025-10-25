@@ -12,8 +12,8 @@ export default function ActivityRecommendations({ userId }: { userId: string }) 
     const [loading, setLoading] = useState(false);
 
     const interestOptions = [
-        'adventure', 'culture', 'food', 'nature', 'history',
-        'nightlife', 'shopping', 'relaxation'
+        'Adventure', 'Culture', 'Food', 'Nature', 'History',
+        'Nightlife', 'Shopping', 'Relaxation'
     ];
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -44,14 +44,16 @@ export default function ActivityRecommendations({ userId }: { userId: string }) 
 
     return (
         <div className="max-w-4xl mx-auto p-6">
-            {/* <Compass className="w-16 h-16 mx-auto mb-4 text-blue-500" /> */}
-            {/* <h3 className="text-xl font-semibold mb-2">Activity Recommendations</h3> */}
-            {/* <p>Discover exciting activities at your destination</p> */}
-            <h2 className="text-3xl font-bold mb-6">Find Activities</h2>
+              <div className="p-8 text-center text-gray-600">
+                <Compass className="w-16 h-16 mx-auto mb-4 text-blue-500" />
+                <h3 className="text-xl font-semibold mb-2">Activity Recommendations</h3>
+                <p>Discover exciting activities at your destination</p>
+              </div>
+            <h2 className="text-3xl font-bold mb-6 text-gray-600">Find Activities</h2>
 
             <form onSubmit={handleSubmit} className="mb-8">
-                <div className="mb-4">
-                    <label className="block text-sm font-medium mb-2">
+                <div className="mb-4 text-gray-600">
+                    <label className="block text-sm font-medium mb-2 text-gray-600">
                         Which country are you visiting?
                     </label>
                     <input
@@ -65,7 +67,7 @@ export default function ActivityRecommendations({ userId }: { userId: string }) 
                 </div>
 
                 <div className="mb-4">
-                    <label className="block text-sm font-medium mb-2">
+                    <label className="block text-sm font-medium mb-2 text-gray-600">
                         What are you interested in?
                     </label>
                     <div className="flex flex-wrap gap-2">
@@ -97,7 +99,7 @@ export default function ActivityRecommendations({ userId }: { userId: string }) 
             {/* Results */}
             {activities.length > 0 && (
                 <div className="space-y-4">
-                    <h3 className="text-2xl font-bold mb-4">
+                    <h3 className="text-2xl font-bold mb-4 text-gray-600">
                         Recommended Activities in {country}
                     </h3>
                     {activities.map((activity, index) => (
@@ -116,13 +118,13 @@ export default function ActivityRecommendations({ userId }: { userId: string }) 
 
                             <div className="grid grid-cols-2 gap-4 text-sm">
                                 <div>
-                                    <span className="font-medium">📍 Location:</span> {activity.location}
+                                    <span className="font-medium text-gray-600">📍 Location:</span> {activity.location}
                                 </div>
                                 <div>
-                                    <span className="font-medium">💰 Cost:</span> {activity.estimated_cost}
+                                    <span className="font-medium text-gray-600">💰 Cost:</span> {activity.estimated_cost}
                                 </div>
                                 <div>
-                                    <span className="font-medium">🗓️ Best Time:</span> {activity.best_time}
+                                    <span className="font-medium text-gray-600">🗓️ Best Time:</span> {activity.best_time}
                                 </div>
                             </div>
 

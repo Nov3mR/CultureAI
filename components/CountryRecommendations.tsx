@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { getCountryRecommendations, getUserProfile, CountryRecommendation } from '@/lib/travelApi';
+import { Compass, Globe, Languages, Sparkles, MapPin, Plane } from 'lucide-react';
 
 export default function CountryRecommendations({ userId }: { userId: string }) {
   const [budget, setBudget] = useState<string>('moderate');
@@ -31,11 +32,16 @@ export default function CountryRecommendations({ userId }: { userId: string }) {
 
   return (
     <div className="max-w-4xl mx-auto p-6">
-      <h2 className="text-3xl font-bold mb-6">Discover Your Next Destination</h2>
+        <div className="p-8 text-center text-gray-600">
+            <Globe className="w-16 h-16 mx-auto mb-4 text-purple-500" />
+            <h3 className="text-xl font-semibold mb-2 text-gray-600">Country Recommendations</h3>
+            <p>Find your next dream destination</p>
+         </div>
+      <h2 className="text-3xl font-bold mb-6 text-gray-600">Discover Your Next Destination</h2>
 
       {visitedCountries.length > 0 && (
         <div className="mb-6 p-4 bg-green-50 rounded-lg">
-          <h3 className="font-semibold mb-2">✈️ You've visited:</h3>
+          <h3 className="font-semibold mb-2 text-gray-600">✈️ You've visited:</h3>
           <div className="flex flex-wrap gap-2">
             {visitedCountries.map(country => (
               <span key={country} className="px-3 py-1 bg-green-200 text-green-800 rounded-full text-sm">
@@ -48,7 +54,7 @@ export default function CountryRecommendations({ userId }: { userId: string }) {
 
       <div className="mb-6 space-y-4">
         <div>
-          <label className="block text-sm font-medium mb-2">Budget Preference</label>
+          <label className="block text-sm font-medium mb-2 text-gray-600">Budget Preference</label>
           <div className="flex gap-2">
             {['budget', 'moderate', 'luxury'].map(b => (
               <button
@@ -67,7 +73,7 @@ export default function CountryRecommendations({ userId }: { userId: string }) {
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-2">Travel Style</label>
+          <label className="block text-sm font-medium mb-2 text-gray-600">Travel Style</label>
           <div className="flex flex-wrap gap-2">
             {['adventure', 'relaxation', 'cultural', 'foodie', 'beach', 'urban'].map(style => (
               <button
@@ -97,7 +103,7 @@ export default function CountryRecommendations({ userId }: { userId: string }) {
       {/* Results */}
       {recommendations.length > 0 && (
         <div className="space-y-6">
-          <h3 className="text-2xl font-bold">Your Next Adventures</h3>
+          <h3 className="text-2xl font-bold text-gray-600">Your Next Adventures</h3>
           {recommendations.map((rec, index) => (
             <div key={index} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition">
               <div className="flex justify-between items-start mb-4">
@@ -110,7 +116,7 @@ export default function CountryRecommendations({ userId }: { userId: string }) {
               <p className="text-gray-700 mb-4">{rec.reason}</p>
               
               <div className="mb-4">
-                <h5 className="font-semibold mb-2">✨ Highlights:</h5>
+                <h5 className="font-semibold mb-2 text-gray-600">✨ Highlights:</h5>
                 <ul className="list-disc list-inside space-y-1 text-gray-600">
                   {rec.highlights.map((highlight, i) => (
                     <li key={i}>{highlight}</li>
@@ -120,16 +126,16 @@ export default function CountryRecommendations({ userId }: { userId: string }) {
               
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div>
-                  <span className="font-medium">🎯 Best for:</span> {rec.best_for}
+                  <span className="font-medium text-gray-600">🎯 Best for:</span> {rec.best_for}
                 </div>
                 <div>
-                  <span className="font-medium">💰 Budget:</span> {rec.estimated_budget}
+                  <span className="font-medium text-gray-600">💰 Budget:</span> {rec.estimated_budget}
                 </div>
               </div>
               
               {rec.similar_to && (
                 <div className="mt-4 p-3 bg-blue-50 rounded-lg text-sm">
-                  <span className="font-medium">🔗 Similar to:</span> {rec.similar_to}
+                  <span className="font-medium text-gray-600">🔗 Similar to:</span> {rec.similar_to}
                 </div>
               )}
             </div>
