@@ -18,13 +18,13 @@ export default function Translator() {
     ];
 
     const contextOptions = [
-        'ordering food at a restaurant',
-        'asking for directions',
-        'booking a hotel',
-        'shopping',
-        'emergency situation',
-        'making friends',
-        'transportation'
+        'Ordering food at a restaurant',
+        'Asking for directions',
+        'Booking a hotel',
+        'Shopping',
+        'Emergency situation',
+        'Making friends',
+        'Transportation'
     ];
 
     const handleTranslate = async (e: React.FormEvent) => {
