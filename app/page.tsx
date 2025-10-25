@@ -1,45 +1,29 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { Compass, Globe, Languages, Sparkles, MapPin, Plane } from 'lucide-react';
-import ActivityRecommendations from '@/components/ActivityRecommendations';
-import CountryRecommendations from '@/components/CountryRecommendations';
-import Translator from '@/components/Translator';
-
-// Mock components for demonstration
-const ActivityRecs = ({ userId }: { userId: string }) => (
-  <div className="p-8 text-center text-gray-600">
-    <Compass className="w-16 h-16 mx-auto mb-4 text-blue-500" />
-    <h3 className="text-xl font-semibold mb-2">Activity Recommendations</h3>
-    <p>Discover exciting activities at your destination</p>
-  </div>
-);
-
-const CountryRecs = ({ userId }: { userId: string }) => (
-  <div className="p-8 text-center text-gray-600">
-    <Globe className="w-16 h-16 mx-auto mb-4 text-purple-500" />
-    <h3 className="text-xl font-semibold mb-2">Country Recommendations</h3>
-    <p>Find your next dream destination</p>
-  </div>
-);
-
-const Trans = () => (
-  <div className="p-8 text-center text-gray-600">
-    <Languages className="w-16 h-16 mx-auto mb-4 text-emerald-500" />
-    <h3 className="text-xl font-semibold mb-2">Translator</h3>
-    <p>Break language barriers with AI translation</p>
-  </div>
-);
+import React, { useState } from "react";
+import {
+  Compass,
+  Globe,
+  Languages,
+  Sparkles,
+  MapPin,
+  Plane,
+} from "lucide-react";
+import ActivityRecommendations from "@/components/ActivityRecommendations";
+import CountryRecommendations from "@/components/CountryRecommendations";
+import Translator from "@/components/Translator";
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState<'activities' | 'countries' | 'translate'>('activities');
-  const [userId] = useState('user123');
+  const [activeTab, setActiveTab] = useState<
+    "activities" | "countries" | "translate"
+  >("activities");
+  const [userId] = useState("user123");
 
   return (
     <main 
         className="min-h-screen"
         style={{ 
-            backgroundImage: 'linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url(/world-map.png)',
+            backgroundImage: 'url(/world-map.png)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
@@ -67,10 +51,12 @@ export default function Home() {
               CulturAI
             </span>
           </h1>
-          <p className="text-lg text-slate-600 font-medium">Your AI-powered travel companion</p>
+
           <div className="flex items-center justify-center gap-2 mt-3">
             <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
-            <span className="text-sm text-slate-500">Powered by advanced AI</span>
+            <p className="text-lg text-slate-600 font-medium">
+              Your AI-powered travel companion
+            </p>
           </div>
         </div>
 
@@ -78,58 +64,70 @@ export default function Home() {
         <div className="flex justify-center mb-10">
           <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-2xl p-2 inline-flex gap-2 border border-white/20">
             <button
-              onClick={() => setActiveTab('activities')}
+              onClick={() => setActiveTab("activities")}
               className={`group relative px-8 py-4 rounded-xl font-semibold transition-all duration-300 ${
-                activeTab === 'activities'
-                  ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg shadow-blue-500/50 scale-105'
-                  : 'text-slate-600 hover:bg-slate-50'
+                activeTab === "activities"
+                  ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg shadow-blue-500/50 scale-105"
+                  : "text-slate-600 hover:bg-slate-50"
               }`}
             >
               <span className="flex items-center gap-2">
-                <Compass className={`w-5 h-5 transition-transform duration-300 ${
-                  activeTab === 'activities' ? 'rotate-180' : 'group-hover:rotate-45'
-                }`} />
+                <Compass
+                  className={`w-5 h-5 transition-transform duration-300 ${
+                    activeTab === "activities"
+                      ? "rotate-180"
+                      : "group-hover:rotate-45"
+                  }`}
+                />
                 Activities
               </span>
-              {activeTab === 'activities' && (
+              {activeTab === "activities" && (
                 <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1 w-2 h-2 bg-blue-500 rounded-full"></div>
               )}
             </button>
 
             <button
-              onClick={() => setActiveTab('countries')}
+              onClick={() => setActiveTab("countries")}
               className={`group relative px-8 py-4 rounded-xl font-semibold transition-all duration-300 ${
-                activeTab === 'countries'
-                  ? 'bg-gradient-to-r from-purple-500 to-purple-600 text-white shadow-lg shadow-purple-500/50 scale-105'
-                  : 'text-slate-600 hover:bg-slate-50'
+                activeTab === "countries"
+                  ? "bg-gradient-to-r from-purple-500 to-purple-600 text-white shadow-lg shadow-purple-500/50 scale-105"
+                  : "text-slate-600 hover:bg-slate-50"
               }`}
             >
               <span className="flex items-center gap-2">
-                <Globe className={`w-5 h-5 transition-transform duration-300 ${
-                  activeTab === 'countries' ? 'animate-spin-slow' : 'group-hover:rotate-12'
-                }`} />
+                <Globe
+                  className={`w-5 h-5 transition-transform duration-300 ${
+                    activeTab === "countries"
+                      ? "animate-spin-slow"
+                      : "group-hover:rotate-12"
+                  }`}
+                />
                 Destinations
               </span>
-              {activeTab === 'countries' && (
+              {activeTab === "countries" && (
                 <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1 w-2 h-2 bg-purple-500 rounded-full"></div>
               )}
             </button>
 
             <button
-              onClick={() => setActiveTab('translate')}
+              onClick={() => setActiveTab("translate")}
               className={`group relative px-8 py-4 rounded-xl font-semibold transition-all duration-300 ${
-                activeTab === 'translate'
-                  ? 'bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-lg shadow-emerald-500/50 scale-105'
-                  : 'text-slate-600 hover:bg-slate-50'
+                activeTab === "translate"
+                  ? "bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-lg shadow-emerald-500/50 scale-105"
+                  : "text-slate-600 hover:bg-slate-50"
               }`}
             >
               <span className="flex items-center gap-2">
-                <Languages className={`w-5 h-5 transition-transform duration-300 ${
-                  activeTab === 'translate' ? 'scale-110' : 'group-hover:scale-110'
-                }`} />
+                <Languages
+                  className={`w-5 h-5 transition-transform duration-300 ${
+                    activeTab === "translate"
+                      ? "scale-110"
+                      : "group-hover:scale-110"
+                  }`}
+                />
                 Translate
               </span>
-              {activeTab === 'translate' && (
+              {activeTab === "translate" && (
                 <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1 w-2 h-2 bg-emerald-500 rounded-full"></div>
               )}
             </button>
@@ -140,27 +138,29 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden border border-white/20">
             {/* Decorative top border */}
-            <div className={`h-1.5 transition-all duration-500 ${
-              activeTab === 'activities' 
-                ? 'bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600' 
-                : activeTab === 'countries'
-                ? 'bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600'
-                : 'bg-gradient-to-r from-emerald-400 via-emerald-500 to-emerald-600'
-            }`}></div>
+            <div
+              className={`h-1.5 transition-all duration-500 ${
+                activeTab === "activities"
+                  ? "bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600"
+                  : activeTab === "countries"
+                  ? "bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600"
+                  : "bg-gradient-to-r from-emerald-400 via-emerald-500 to-emerald-600"
+              }`}
+            ></div>
 
             {/* Content with smooth transitions */}
             <div className="min-h-[500px] transition-all duration-500">
-              {activeTab === 'activities' && (
+              {activeTab === "activities" && (
                 <div className="animate-fadeIn">
                   <ActivityRecommendations userId={userId} />
                 </div>
               )}
-              {activeTab === 'countries' && (
+              {activeTab === "countries" && (
                 <div className="animate-fadeIn">
                   <CountryRecommendations userId={userId} />
                 </div>
               )}
-              {activeTab === 'translate' && (
+              {activeTab === "translate" && (
                 <div className="animate-fadeIn">
                   <Translator />
                 </div>
@@ -175,23 +175,33 @@ export default function Home() {
                 <Sparkles className="w-6 h-6 text-blue-600" />
               </div>
               <h3 className="font-semibold text-slate-800 mb-2">AI-Powered</h3>
-              <p className="text-sm text-slate-600">Smart recommendations tailored for you</p>
+              <p className="text-sm text-slate-600">
+                Smart recommendations tailored for you
+              </p>
             </div>
 
             <div className="bg-white/60 backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-3">
                 <MapPin className="w-6 h-6 text-purple-600" />
               </div>
-              <h3 className="font-semibold text-slate-800 mb-2">Global Coverage</h3>
-              <p className="text-sm text-slate-600">Explore destinations worldwide</p>
+              <h3 className="font-semibold text-slate-800 mb-2">
+                Global Coverage
+              </h3>
+              <p className="text-sm text-slate-600">
+                Explore destinations worldwide
+              </p>
             </div>
 
             <div className="bg-white/60 backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-3">
                 <Languages className="w-6 h-6 text-emerald-600" />
               </div>
-              <h3 className="font-semibold text-slate-800 mb-2">Real-time Translation</h3>
-              <p className="text-sm text-slate-600">Break language barriers instantly</p>
+              <h3 className="font-semibold text-slate-800 mb-2">
+                Real-time Translation
+              </h3>
+              <p className="text-sm text-slate-600">
+                Break language barriers instantly
+              </p>
             </div>
           </div>
         </div>
@@ -199,7 +209,8 @@ export default function Home() {
 
       <style jsx>{`
         @keyframes blob {
-          0%, 100% {
+          0%,
+          100% {
             transform: translate(0, 0) scale(1);
           }
           25% {
