@@ -12,9 +12,9 @@ export default function Translator() {
     const [loading, setLoading] = useState(false);
 
     const commonLanguages = [
-        'Spanish', 'French', 'German', 'Italian', 'Portuguese',
+        'English', 'Spanish', 'French', 'German', 'Italian', 'Portuguese',
         'Japanese', 'Korean', 'Mandarin Chinese', 'Arabic', 'Thai',
-        'Vietnamese', 'Hindi', 'Turkish', 'Greek', 'Dutch'
+        'Vietnamese', 'Hindi', 'Turkish', 'Greek', 'Dutch', 'Russian', 'Polish', 'Norwegian', 'Danish'
     ];
 
     const contextOptions = [
