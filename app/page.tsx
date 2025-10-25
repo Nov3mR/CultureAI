@@ -23,7 +23,7 @@ export default function Home() {
     <main 
         className="min-h-screen"
         style={{ 
-            backgroundImage: 'url(/world-map.png)',
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),url(/world-map.png)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
