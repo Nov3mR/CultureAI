@@ -94,7 +94,7 @@ export default function ActivityRecommendations({ userId }: { userId: string }) 
                     >
                     {loading 
                         ? '🌍 Finding your ideal activity...'
-                        : !interests || !country
+                        : (!interests || !country)
                         ? <span className="text-gray-50">Enter a country and select your interests</span>
                         : '✨ Get Recommendations'}
                 </button>
