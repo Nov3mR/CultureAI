@@ -91,8 +91,12 @@ export default function ActivityRecommendations({ userId }: { userId: string }) 
                     type="submit"
                     disabled={loading || !country}
                     className="w-full bg-blue-500 text-white py-3 rounded-lg font-medium hover:bg-blue-600 disabled:bg-gray-300 disabled:cursor-not-allowed"
-                >
-                    {loading ? '🔍 Finding activities...' : '✨ Get Recommendations'}
+                    >
+                    {loading 
+                        ? '🌍 Finding your perfect destination...'
+                        : !interests || !country
+                        ? <span className="text-gray-50">Enter a country and select your interests</span>
+                        : '✨ Get Recommendations'}
                 </button>
             </form>
 

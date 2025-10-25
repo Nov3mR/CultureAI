@@ -54,7 +54,7 @@ export default function CountryRecommendations({ userId }: { userId: string }) {
 
       <div className="mb-6 space-y-4">
         <div>
-          <label className="block text-sm font-medium mb-2 text-gray-600">Budget Preference</label>
+          <label className="block text-sm font-medium mb-2 text-gray-600">What's your budget?</label>
           <div className="flex gap-2">
             {['budget', 'moderate', 'luxury'].map(b => (
               <button
@@ -73,7 +73,7 @@ export default function CountryRecommendations({ userId }: { userId: string }) {
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-2 text-gray-600">Travel Style</label>
+          <label className="block text-sm font-medium mb-2 text-gray-600">What's your travel style?</label>
           <div className="flex flex-wrap gap-2">
             {['adventure', 'relaxation', 'cultural', 'foodie', 'beach', 'urban'].map(style => (
               <button
@@ -92,12 +92,19 @@ export default function CountryRecommendations({ userId }: { userId: string }) {
         </div>
 
         <button
-          onClick={handleGetRecommendations}
-          disabled={loading}
-          className="w-full bg-purple-500 text-white py-3 rounded-lg font-medium hover:bg-purple-600 disabled:bg-gray-300"
-        >
-          {loading ? '🌍 Finding your perfect destination...' : '🎯 Get Recommendations'}
-        </button>
+            onClick={handleGetRecommendations}
+            disabled={loading || !travelStyle} // 👈 disables if travelStyle not selected
+            className={`w-full py-3 rounded-lg font-medium transition-all duration-200
+                ${loading || !travelStyle 
+                ? 'bg-gray-300 text-gray-500 cursor-not-allowed' 
+                : 'bg-purple-500 text-white hover:bg-purple-600'}`}
+            >
+            {loading 
+                ? '🌍 Finding your perfect destination...'
+                : !travelStyle
+                ? <span className="text-gray-50">Select a travel style first</span>
+                : '🎯 Get Recommendations'}
+            </button>
       </div>
 
       {/* Results */}

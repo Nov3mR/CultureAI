@@ -136,7 +136,7 @@ export default function Home() {
 
         {/* Enhanced Content Card */}
         <div className="max-w-5xl mx-auto">
-          <div className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden border border-white/20">
+          <div className="bg-white/85 backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
             {/* Decorative top border */}
             <div
               className={`h-1.5 transition-all duration-500 ${
@@ -170,7 +170,7 @@ export default function Home() {
 
           {/* Bottom info cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-            <div className="bg-white/60 backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div className="bg-white/70 backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-3">
                 <Sparkles className="w-6 h-6 text-blue-600" />
               </div>
@@ -180,7 +180,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="bg-white/60 backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div className="bg-white/70 backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-3">
                 <MapPin className="w-6 h-6 text-purple-600" />
               </div>
@@ -192,7 +192,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="bg-white/60 backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div className="bg-white/70 backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-3">
                 <Languages className="w-6 h-6 text-emerald-600" />
               </div>
