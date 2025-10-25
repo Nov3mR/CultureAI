@@ -20,15 +20,15 @@ export default function Home() {
   const [userId] = useState("user123");
 
   return (
-    <main
-      className="min-h-screen"
-      style={{
-        backgroundImage: "url(/world-map.png)",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
-      }}
+    <main 
+        className="min-h-screen"
+        style={{ 
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),url(/world-map.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundAttachment: 'fixed'
+        }}
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -55,7 +55,7 @@ export default function Home() {
           <div className="flex items-center justify-center gap-2 mt-3">
             <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
             <p className="text-lg text-slate-600 font-medium">
-              Your AI-powered travel companion
+              Your travel buddy powered by Gemini
             </p>
           </div>
         </div>

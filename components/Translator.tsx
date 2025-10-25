@@ -99,9 +99,18 @@ export default function Translator() {
                 <button
                     type="submit"
                     disabled={loading || !text.trim()}
-                    className="w-full bg-green-500 text-white py-3 rounded-lg font-medium hover:bg-green-600 disabled:bg-gray-300 disabled:cursor-not-allowed"
-                >
-                    {loading ? '🔄 Translating...' : '🌐 Translate'}
+                    className={`w-full py-3 rounded-lg font-medium transition-all duration-200 
+                    ${loading || !text.trim()
+                        ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                        : 'bg-green-500 text-white hover:bg-green-600 hover:scale-[1.02] active:scale-95'}`}
+                    >
+                    {loading ? (
+                    '🔄 Translating...'
+                    ) : !text.trim() ? (
+                    <span className="text-gray-50">Enter text to translate</span>
+                    ) : (
+                    '🌐 Translate'
+                    )}
                 </button>
             </form>
 
