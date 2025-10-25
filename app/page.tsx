@@ -60,78 +60,81 @@ export default function Home() {
           </div>
         </div>
 
+
         {/* Enhanced Tab Navigation */}
-        <div className="flex justify-center mb-10">
-          <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-2xl p-2 inline-flex gap-2 border border-white/20">
+        <div className="flex justify-center mb-10 px-2">
+        <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-2xl p-2 inline-flex gap-2 border border-white/20 w-full max-w-2xl">
             <button
-              onClick={() => setActiveTab("activities")}
-              className={`group relative px-8 py-4 rounded-xl font-semibold transition-all duration-300 ${
+            onClick={() => setActiveTab("activities")}
+            className={`group relative flex-1 px-4 md:px-8 py-3 md:py-4 rounded-xl font-semibold transition-all duration-300 ${
                 activeTab === "activities"
-                  ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg shadow-blue-500/50 scale-105"
-                  : "text-slate-600 hover:bg-slate-50"
-              }`}
+                ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg shadow-blue-500/50 scale-105"
+                : "text-slate-600 hover:bg-slate-50"
+            }`}
             >
-              <span className="flex items-center gap-2">
+            <span className="flex items-center justify-center gap-1 md:gap-2 text-sm md:text-base">
                 <Compass
-                  className={`w-5 h-5 transition-transform duration-300 ${
+                className={`w-4 h-4 md:w-5 md:h-5 transition-transform duration-300 ${
                     activeTab === "activities"
-                      ? "rotate-180"
-                      : "group-hover:rotate-45"
-                  }`}
+                    ? "rotate-180"
+                    : "group-hover:rotate-45"
+                }`}
                 />
-                Activities
-              </span>
-              {activeTab === "activities" && (
+                <span className="hidden sm:inline">Activities</span>
+                <span className="sm:hidden">Activity</span>
+            </span>
+            {activeTab === "activities" && (
                 <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1 w-2 h-2 bg-blue-500 rounded-full"></div>
-              )}
+            )}
             </button>
 
             <button
-              onClick={() => setActiveTab("countries")}
-              className={`group relative px-8 py-4 rounded-xl font-semibold transition-all duration-300 ${
+            onClick={() => setActiveTab("countries")}
+            className={`group relative flex-1 px-4 md:px-8 py-3 md:py-4 rounded-xl font-semibold transition-all duration-300 ${
                 activeTab === "countries"
-                  ? "bg-gradient-to-r from-purple-500 to-purple-600 text-white shadow-lg shadow-purple-500/50 scale-105"
-                  : "text-slate-600 hover:bg-slate-50"
-              }`}
+                ? "bg-gradient-to-r from-purple-500 to-purple-600 text-white shadow-lg shadow-purple-500/50 scale-105"
+                : "text-slate-600 hover:bg-slate-50"
+            }`}
             >
-              <span className="flex items-center gap-2">
+            <span className="flex items-center justify-center gap-1 md:gap-2 text-sm md:text-base">
                 <Globe
-                  className={`w-5 h-5 transition-transform duration-300 ${
+                className={`w-4 h-4 md:w-5 md:h-5 transition-transform duration-300 ${
                     activeTab === "countries"
-                      ? "animate-spin-slow"
-                      : "group-hover:rotate-12"
-                  }`}
+                    ? "animate-spin-slow"
+                    : "group-hover:rotate-12"
+                }`}
                 />
-                Destinations
-              </span>
-              {activeTab === "countries" && (
+                <span className="hidden sm:inline">Destinations</span>
+                <span className="sm:hidden">Dest</span>
+            </span>
+            {activeTab === "countries" && (
                 <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1 w-2 h-2 bg-purple-500 rounded-full"></div>
-              )}
+            )}
             </button>
 
             <button
-              onClick={() => setActiveTab("translate")}
-              className={`group relative px-8 py-4 rounded-xl font-semibold transition-all duration-300 ${
+            onClick={() => setActiveTab("translate")}
+            className={`group relative flex-1 px-4 md:px-8 py-3 md:py-4 rounded-xl font-semibold transition-all duration-300 ${
                 activeTab === "translate"
-                  ? "bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-lg shadow-emerald-500/50 scale-105"
-                  : "text-slate-600 hover:bg-slate-50"
-              }`}
+                ? "bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-lg shadow-emerald-500/50 scale-105"
+                : "text-slate-600 hover:bg-slate-50"
+            }`}
             >
-              <span className="flex items-center gap-2">
+            <span className="flex items-center justify-center gap-1 md:gap-2 text-sm md:text-base">
                 <Languages
-                  className={`w-5 h-5 transition-transform duration-300 ${
+                className={`w-4 h-4 md:w-5 md:h-5 transition-transform duration-300 ${
                     activeTab === "translate"
-                      ? "scale-110"
-                      : "group-hover:scale-110"
-                  }`}
+                    ? "scale-110"
+                    : "group-hover:scale-110"
+                }`}
                 />
                 Translate
-              </span>
-              {activeTab === "translate" && (
+            </span>
+            {activeTab === "translate" && (
                 <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1 w-2 h-2 bg-emerald-500 rounded-full"></div>
-              )}
+            )}
             </button>
-          </div>
+        </div>
         </div>
 
         {/* Enhanced Content Card */}
