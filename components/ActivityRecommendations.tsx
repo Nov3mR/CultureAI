@@ -3,6 +3,7 @@
 
 import { useState } from 'react';
 import { getActivityRecommendations, Activity } from '@/lib/travelApi';
+import { Compass, Globe, Languages, Sparkles, MapPin, Plane } from 'lucide-react';
 
 export default function ActivityRecommendations({ userId }: { userId: string }) {
     const [country, setCountry] = useState('');
@@ -43,6 +44,9 @@ export default function ActivityRecommendations({ userId }: { userId: string }) 
 
     return (
         <div className="max-w-4xl mx-auto p-6">
+            {/* <Compass className="w-16 h-16 mx-auto mb-4 text-blue-500" /> */}
+            {/* <h3 className="text-xl font-semibold mb-2">Activity Recommendations</h3> */}
+            {/* <p>Discover exciting activities at your destination</p> */}
             <h2 className="text-3xl font-bold mb-6">Find Activities</h2>
 
             <form onSubmit={handleSubmit} className="mb-8">
