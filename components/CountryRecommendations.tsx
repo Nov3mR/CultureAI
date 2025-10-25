@@ -150,10 +150,6 @@ export default function CountryRecommendations({ userId }: { userId: string }) {
                 <div>
                   <span className="font-medium text-gray-600">🎯 Best for:</span> {rec.best_for}
                 </div>
-                <div>
-                  <span className="font-medium">💰 Estimated Budget:</span>{' '}
-                  {rec.estimated_budget || budget}
-                </div>
               </div>
 
               {rec.similar_to && (
